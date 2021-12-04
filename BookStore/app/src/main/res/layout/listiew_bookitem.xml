@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <!--android:background="@drawable/trippoilistviewbg"-->
+     <!--路书图片-->
+    <ImageView android:id="@+id/tripImg" android:layout_width="100px"
+        android:layout_height="150px" android:layout_margin="10px" />
+    <!--<com.android.volley.toolbox.NetworkImageView-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:id="@+id/tripImg"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="10px" android:layout_marginRight="10px"
+        android:layout_marginBottom="10px">
+
+        <TextView android:id="@+id/tripTitle" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textColor="#ff000000" />
+
+        <TextView android:id="@+id/tripSegName" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textColor="#ff000000"
+            android:layout_marginTop="5px" android:layout_marginRight="20px" />
+        <TextView android:id="@+id/tripProv" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textColor="#ffFF0000"
+            android:layout_marginTop="5px" android:layout_marginRight="20px" />
+
+
+    </LinearLayout>
+</LinearLayout>

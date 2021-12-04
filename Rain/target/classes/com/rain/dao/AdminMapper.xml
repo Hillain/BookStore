@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.rain.dao.AdminMapper">
+    <select id="login" resultType="Admin">
+	    select * from
+	    admin
+	    WHERE username = #{username}
+        AND  password= #{password}
+	</select>
+	
+	<select id="getAllCategory" resultType="Category">
+	    select * from category;
+	</select>
+    <insert id="cate_add" parameterType="Category">
+     	INSERT into category(lx,state,descr) values(#{lx},#{state},#{descr})
+    </insert>
+    <insert id="cate_edit" parameterType="Category">
+     	update category 
+		<trim prefix="set" suffixOverrides=",">
+		    <if test="lx!=null">lx=#{lx},</if>
+		    <if test="state!=null">state=#{state},</if>
+		    <if test="descr!=null">descr=#{descr}</if>
+	    </trim>
+	    where id=#{id}
+    </insert>
+    <select id="cate_get" resultType="Category" parameterType="int">
+	    select * from category where id=#{id};
+	</select>
+    <delete id="cate_del" parameterType="int">
+		delete from
+		category
+		where id=#{id}
+	</delete>
+	
+	<select id="book_find" resultType="Book">
+	    select * from book
+	</select>
+	<insert id="book_add" parameterType="Book">
+     	INSERT into book(bookid,bname,bauthor,bpublish,bprice,bstock,bcategory,binfo,burl) 
+     	values(#{bookid},#{bname},#{bauthor},#{bpublish},#{bprice},#{bstock},#{bcategory},#{binfo},#{burl})
+    </insert>
+    <insert id="book_edit" parameterType="Book">
+    	update book 
+		<trim prefix="set" suffixOverrides=",">
+		    <if test="bname!=null">bname=#{bname},</if>
+		    <if test="bauthor!=null">bauthor=#{bauthor},</if>
+		    <if test="bpublish!=null">bpublish=#{bpublish}</if>
+		    <if test="bprice!=null">bprice=#{bprice}</if>
+		    <if test="bstock!=null">bstock=#{bstock}</if>
+		    <if test="bcategory!=null">bcategory=#{bcategory}</if>
+		    <if test="binfo!=null">binfo=#{binfo}</if>
+		    <if test="burl!=null">burl=#{burl}</if>
+	    </trim>
+	    where bookid=#{bookid}
+    </insert>
+    <select id="book_get" resultType="Book" parameterType="int">
+	    select * from book where bookid=#{bookid};
+	</select>
+	 <delete id="book_del" parameterType="int">
+		delete from
+		book
+		where bookid=#{bookid}
+	</delete>
+</mapper>

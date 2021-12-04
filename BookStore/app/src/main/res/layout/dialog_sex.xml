@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView android:text="更改性别"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:background="#FA8CEC"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:textSize="20dp"
+        android:id="@+id/edThreshold"
+        android:layout_marginTop="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入性别(男Or女)" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btn_cancle"
+            android:text="取消"
+            android:textSize="15dp"
+            android:textColor="#FFEE1D66"
+            android:background="@android:color/transparent"
+            android:layout_toLeftOf ="@+id/btn_confirm"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_confirm"
+            android:text="确定"
+            android:textSize="15dp"
+            android:layout_alignParentRight="true"
+            android:textColor="#FFEE1D66"
+            android:background="@android:color/transparent"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

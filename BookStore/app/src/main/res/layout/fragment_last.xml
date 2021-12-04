@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/h_back"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+        <ImageView
+            android:id="@+id/h_head"
+            android:background="@drawable/head1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true" />
+
+
+        <!--<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/h_back"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/user_line"
+                android:layout_width="1dp"
+                android:layout_height="25dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:background="@android:color/white" />
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/user_line"
+                android:text="张三"
+                android:textColor="@android:color/white"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/user_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/user_line"
+                android:text="182****5882"
+                android:textColor="@android:color/white"
+                android:textSize="17sp" />
+        </RelativeLayout>-->
+
+
+    </RelativeLayout>
+
+    <com.example.bookstore.Adapter.ItemView
+        android:id="@+id/nickName"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/ic_nick_name"
+        app:left_text="用户名"
+        app:right_text="" />
+    <com.example.bookstore.Adapter.ItemView
+        android:id="@+id/sex"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/ic_sex"
+        app:left_text="性别"
+        app:right_text="" />
+    <com.example.bookstore.Adapter.ItemView
+        android:id="@+id/signName"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/ic_sign_name"
+        app:left_text="个性签名"
+        app:right_text="" />
+    <com.example.bookstore.Adapter.ItemView
+        android:id="@+id/editpwd"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/ic_pass"
+        app:left_text="修改密码"
+        app:right_text="" />
+    <com.example.bookstore.Adapter.ItemView
+        android:id="@+id/editphone"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="-5dp"
+        app:left_icon="@drawable/ic_phone"
+        app:left_text="修改手机"
+        app:right_text="" />
+    <com.example.bookstore.Adapter.ItemView
+        android:id="@+id/editemail"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="-2dp"
+        app:left_icon="@drawable/ic_email"
+        app:left_text="修改邮箱"
+        app:right_text="" />
+    <com.example.bookstore.Adapter.ItemView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/ic_about"
+        app:left_text="版本"
+        app:right_text="" />
+    <Button
+        android:id="@+id/btn_zhuxiao"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:background="#3399ff"
+        android:text="注销登录"
+        android:textColor="#ffffff" />
+</LinearLayout>

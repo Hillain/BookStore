@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>若水管理系统旗舰版1.5</title>
+<link rel="stylesheet" type="text/css" href="css/login.css"/>
+<link rel="stylesheet" type="text/css" href="ui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="ui/themes/icon.css">
+<script type="text/javascript" src="ui/jquery.min.js"></script>
+<script type="text/javascript" src="ui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="ui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="ui/jquery.serializejson.min.js"></script>
+<script type="text/javascript">
+/**
+ * 登陆
+ */
+function login(){
+	var formdata = $('#loginform').serializeJSON();
+	//提交登陆验证
+	$.ajax({
+		url: 'admin/login',
+		data:formdata,
+		dataType: 'json',
+		type: 'post',
+		success:function(rtn){
+			//登陆成功
+			if(rtn.success){
+				location.href="index.html";
+			}else{
+				$.messager.alert('提示',rtn.message,'info');
+			}
+		}
+	});
+}
+</script>
+</head>
+<body>
+<div class='signup_container'>
+<div class="w-load"><div class="spin"></div></div>
+    <h1 class='signup_title'>若水管理系统旗舰版1.5</h1>
+    <div id="userInfo">
+    	<span style="float:left; margin-left:40px; margin-top:-15px; height:200px; border:0px solid red"><img src='images/shu.jpg' id='admin'/></span>
+        <span style="float:left; margin-left:40px; height:200px; border:0px solid red">
+            <div id="signup_forms" class="signup_forms clearfix">
+                  <form class="signup_form_form" id="loginform" method="post" action="admin/login">
+                          <div class="form_row first_row">
+                              <label for="signup_email">请输入用户名</label>
+                              <input type="text" name="username" placeholder="请输入用户名" id="signup_name" >
+                          </div>
+                          <div class="form_row">
+                              <label for="signup_password">请输入密码</label>
+                              <input type="password" name="password" placeholder="请输入密码" id="signup_password" >
+                          </div>
+                 
+            </div> 
+            <div id="foo"></div>
+            <br/>
+        </span>
+    </div>
+    <div class="login-btn-set"><div class='rem'>记住我</div> 
+    <button class='login-btn'></button>
+    <!-- <a href='javascript:login()' class='login-btn'></a> --></div>
+    </form>
+</div>
+</body>
+
+</html>

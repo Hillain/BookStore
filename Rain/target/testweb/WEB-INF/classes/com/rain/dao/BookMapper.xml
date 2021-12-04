@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.rain.dao.BookMapper">
+
+
+    <select id="selectBookList" resultType="Book">
+    select * from
+    book
+</select>
+    <select id="selectBookListbyid" parameterType="String"  resultType="Book">
+    select * from
+    book where bcategory=#{a}
+</select>
+    <select id="selectBookCate" resultType="Category">
+    select * from
+    category
+</select>
+
+<select id="selectCar" parameterType="int" resultType="Car">
+    select * from
+    car where id=#{a}
+</select>
+    <delete id="deletecar" parameterType="int">
+		delete from
+		car
+		where bid=#{a}
+	</delete>
+    <insert id="insertcar" parameterType="Car">
+
+        INSERT into car(id,bid,bname,bnumber,total,burl) values(#{id},#{bid},#{bname},#{bnumber},#{total},#{burl})
+
+    </insert>
+    <insert id="insertorder" parameterType="Order">
+
+        INSERT into order2(uid,bname,bnumber,oprice,burl) values(#{uid},#{bname},#{bnumber},#{oprice},#{burl})
+
+    </insert>
+    <select id="selectOrder" parameterType="int" resultType="Order">
+    select * from
+    order2 where uid=#{a}
+</select>
+    <delete id="deleteorder" parameterType="int">
+		delete from
+		order2
+		where oid=#{a}
+	</delete>
+
+    <delete id="clearcar" parameterType="int">
+		delete from
+		car
+		where id=#{a}
+	</delete>
+</mapper>

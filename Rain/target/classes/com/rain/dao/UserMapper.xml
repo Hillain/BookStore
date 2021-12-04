@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.rain.dao.UserMapper">
+    <select id="selectUser" resultType="User" parameterType="User">
+        SELECT *
+        FROM user
+        WHERE username = #{username}
+        AND  password= #{password}
+    </select>
+    <insert id="insertUser" parameterType="User">
+        <selectKey keyProperty="id" resultType="int" order="BEFORE">
+            SELECT LAST_INSERT_ID();
+        </selectKey>
+     INSERT into user(username,nickname,password,pnumber,sex,addr,email,sign) values(#{username},#{nickname},#{password},#{pnumber},#{sex},#{addr},#{email},#{sign})
+	</insert>
+    <insert id="updateNick" parameterType="User">
+        update  user set nickname=#{nickname} where id=#{id}
+    </insert>
+    <insert id="updateSex" parameterType="User">
+        update  user set sex=#{sex} where id=#{id}
+    </insert>
+    <insert id="updateSign" parameterType="User">
+        update  user set sign=#{sign} where id=#{id}
+    </insert>
+    <insert id="updateEmail" parameterType="User">
+        update  user set email=#{email} where id=#{id}
+    </insert>
+    <insert id="updatePhone" parameterType="User">
+        update  user set pnumber=#{pnumber} where id=#{id}
+    </insert>
+    <insert id="updatePwd" parameterType="User">
+        update  user set password=#{password} where username=#{username}
+    </insert>
+    
+    <select id="correctPhone" resultType="User" parameterType="User">
+        select * from user 
+        WHERE username = #{username}
+        AND pnumber = #{pnumber}
+    </select>
+    <select id="correctEmail" resultType="User" parameterType="User">
+        select * from user 
+        WHERE username = #{username}
+        AND email = #{email}
+    </select>
+</mapper>

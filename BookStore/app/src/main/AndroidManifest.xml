@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bookstore">
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".BookApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.BookInfo"></activity>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="若水书城"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Activity.Login" />
+        <activity android:name=".Activity.Regist_Chose" />
+        <activity android:name=".Activity.Register_ByPhone" />
+        <activity android:name=".Activity.Register_ByEmail" />
+        <activity android:name=".Activity.Password_Chose" />
+        <activity android:name=".Activity.Password_ByEmail" />
+        <activity android:name=".Activity.Password_ByPhone" />
+        <activity android:name=".Activity.WelcomeGuideActivity" />
+        <activity android:name=".Activity.Welcome"
+            android:label="若水书城">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
